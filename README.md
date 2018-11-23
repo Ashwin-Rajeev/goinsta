@@ -18,7 +18,8 @@ which returns a success flag and a error meassage
 if the operation works correctly, it will return a true and error will be nil
 if the operation failed, it will return false and the corresponding error message
 
-```_, err := goinsta.GetImage("https://www.instagram.com/dyfgsuyswyer47477834982","/home/user/")
+```
+_, err := goinsta.GetImage("https://www.instagram.com/dyfgsuyswyer47477834982","/home/user/")
 	if err != nil {
 		log.Fatal(err)
 	}
