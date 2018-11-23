@@ -3,7 +3,7 @@
 // GetImage is used to download an image from instagram link
 // we need to provide image link, destination in which we
 // need to download the image and the file name
-// returnd a success flag and an error message
+// returned a success flag and an error message
 
 // func GetImage(url, dest string) (bool, error)
 
@@ -86,7 +86,7 @@ func (i *info) parseHTML(s []byte) error {
 // GetImage is used to download an image from instagram link
 // we need to provide image link, destination in which we
 // need to download the image and the file name
-// returnd a success flag and an error message
+// returned a success flag and an error message
 func GetImage(url, dest string) (bool, error) {
 	resp, err := http.Get(url)
 	if err != nil {
