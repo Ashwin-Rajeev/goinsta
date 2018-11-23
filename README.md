@@ -1,4 +1,4 @@
-# goinsta [![Build Status](https://travis-ci.com/Ashwin-Rajeev/goinsta.svg?branch=master)](https://travis-ci.com/Ashwin-Rajeev/goinsta) [![Go Report Card](https://goreportcard.com/badge/github.com/Ashwin-Rajeev/goinsta)](https://goreportcard.com/report/github.com/Ashwin-Rajeev/goinsta)
+# goinsta [![Build Status](https://travis-ci.com/Ashwin-Rajeev/goinsta.svg?branch=master)](https://travis-ci.com/Ashwin-Rajeev/goinsta) [![Go Report Card](https://goreportcard.com/badge/github.com/Ashwin-Rajeev/goinsta)](https://goreportcard.com/report/github.com/Ashwin-Rajeev/goinsta) [![GoDoc](https://godoc.org/github.com/Ashwin-Rajeev/goinsta?status.svg)](https://godoc.org/github.com/Ashwin-Rajeev/goinsta)
 
 `goinsta` is a a complete instagram library purely built in `GO`
 
