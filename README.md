@@ -4,7 +4,7 @@
 
 To use the package import the package into your machine using the command:
 
-> go get 
+> go get https://github.com/Ashwin-Rajeev/goinsta
 
 ## GetImage
 GetImage is used to download an image from instagram link
