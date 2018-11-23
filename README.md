@@ -6,7 +6,7 @@ To use the package import the package into your machine using the command:
 
 > go get 
 
-##GetImage
+## GetImage
 GetImage is used to download an image from instagram link
 we need to provide image link, destination in which we
 need to download the image and the file name
