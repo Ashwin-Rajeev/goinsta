@@ -1,4 +1,4 @@
-# goinsta
+# goinsta [![Go Report Card](https://goreportcard.com/badge/github.com/Ashwin-Rajeev/goinsta)](https://goreportcard.com/report/github.com/Ashwin-Rajeev/goinsta)
 
 `goinsta` is a a complete instagram library purely built in `GO`
 
