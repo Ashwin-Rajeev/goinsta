@@ -26,7 +26,7 @@ _, err := goinsta.GetImage("https://www.instagram.com/dyfgsuyswyer47477834982","
 ```
 
 After the successful execution you will receive a
-success message aling with the path and name of the image downloaded
+success message along with the path and name of the image downloaded
 
 
 ## Contributing
