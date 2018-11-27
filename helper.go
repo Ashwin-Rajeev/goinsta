@@ -22,8 +22,8 @@ func image(url string) (*http.Response, error) {
 }
 
 // getFileName retrives the file name
-func (i *info) getFileName() (string, error) {
-	r := strings.NewReader(string(i.content))
+func (a *information) getFileName() (string, error) {
+	r := strings.NewReader(string(a.content))
 	z := html.NewTokenizer(r)
 	for {
 		tt := z.Next()
@@ -43,8 +43,8 @@ func (i *info) getFileName() (string, error) {
 }
 
 // WriteFile write the image to aparticular path as you specified
-func (i *info) writeFile(resp *http.Response, path string) error {
-	name, err := i.getFileName()
+func (a *information) writeFile(resp *http.Response, path string) error {
+	name, err := a.getFileName()
 	if err != nil {
 		log.Fatal(goerror.GetErrorInfo(err))
 	}
