@@ -34,9 +34,9 @@ const (
 info := goinsta.NewInfo(url,destination)
 
  _,err:= info.GetImage()
-		if err != nil {
-			log.Fatal(err)
-		}
+if err != nil {
+	log.Fatal(err)
+}
 		
 ```
 
