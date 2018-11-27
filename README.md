@@ -6,6 +6,13 @@ To use the package import the package into your machine using the command:
 
 > go get github.com/Ashwin-Rajeev/goinsta
 
+## NewInfo
+NewInfo returns a new  info pointer
+By using this pointer you can access
+the functions implemented by Info
+
+``` func NewInfo(url, dest string) *Info```
+
 ## GetImage
 GetImage is used to download an image from instagram link
 we need to provide image link, destination in which we
@@ -19,10 +26,13 @@ if the operation works correctly, it will return a true and error will be nil
 if the operation failed, it will return false and the corresponding error message
 
 ```
-_, err := goinsta.GetImage("https://www.instagram.com/dyfgsuyswyer47477834982","/home/user/")
-	if err != nil {
-		log.Fatal(err)
-	}
+info := goinsta.NewInfo("https://www.instagram.com/dyfgsuyswyer47477834982","/home/user/")
+
+ _,err:= info.GetImage()
+		if err != nil {
+			log.Fatal(err)
+		}
+		
 ```
 
 After the successful execution you will receive a

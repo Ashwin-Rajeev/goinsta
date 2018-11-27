@@ -1,5 +1,11 @@
 // goinsta is a a complete instagram library
 
+// NewInfo returns a new  info pointer
+// By using this pointer you can access
+// the functions implemented by Info
+
+// func NewInfo(url, dest string) *Info
+
 // GetImage is used to download an image from instagram link
 // we need to provide image link, destination in which we
 // need to download the image and the file name
@@ -33,18 +39,21 @@ import (
 	"golang.org/x/net/html"
 )
 
-// info struct stores the image information
-type info struct {
+// Info struct stores the image information
+type Info struct {
+	Crawler
+}
+type information struct {
+	content []byte
 	url     string
 	dest    string
-	content []byte
 }
 
 // ParseHTML is a function used to parse the url response
-func (i *info) parseHTML(s []byte) error {
-	doc, err := html.Parse(strings.NewReader(string(s)))
+func (i *information) parseHTML() error {
+	doc, err := html.Parse(strings.NewReader(string(i.content)))
 	if err != nil {
-		return goerror.GetErrorInfo(err)
+		return err
 	}
 	var f func(*html.Node)
 	f = func(n *html.Node) {
@@ -83,28 +92,43 @@ func (i *info) parseHTML(s []byte) error {
 	return nil
 }
 
+func (i *information) get() error {
+	resp, err := http.Get(i.url)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	i.content, err = ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 // GetImage is used to download an image from instagram link
 // we need to provide image link, destination in which we
 // need to download the image and the file name
 // returned a success flag and an error message
-func GetImage(url, dest string) (bool, error) {
-	resp, err := http.Get(url)
+func (i *Info) GetImage() (bool, error) {
+	err := i.get()
 	if err != nil {
 		return false, goerror.GetErrorInfo(err)
 	}
-	defer resp.Body.Close()
-	content, err := ioutil.ReadAll(resp.Body)
-	i := &info{
-		url,
-		dest,
-		content,
-	}
-	if err != nil {
-		return false, goerror.GetErrorInfo(err)
-	}
-	err = i.parseHTML(content)
+	err = i.parseHTML()
 	if err != nil {
 		return false, goerror.GetErrorInfo(err)
 	}
 	return true, nil
+}
+
+// NewInfo returns a new  info pointer
+// By using this pointer you can access
+// the functions implemented by Info
+func NewInfo(url, dest string) *Info {
+	return &Info{
+		Crawler: &information{
+			url:  url,
+			dest: dest,
+		},
+	}
 }
