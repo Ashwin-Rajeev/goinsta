@@ -44,7 +44,7 @@ func TestInfo_GetImage(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			i := &Info{Crawler: &MockInsta{
+			i := &Info{Crawler: &mockInsta{
 				MockGet:       tt.get,
 				MockParseHTML: tt.parseHTML,
 			}}

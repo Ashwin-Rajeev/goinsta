@@ -26,7 +26,12 @@ if the operation works correctly, it will return a true and error will be nil
 if the operation failed, it will return false and the corresponding error message
 
 ```
-info := goinsta.NewInfo("https://www.instagram.com/dyfgsuyswyer47477834982","/home/user/")
+const (
+	url         = "https://www.instagram.com/dyfgsuyswyer47477834982"
+	destination = "/home/user/"
+)
+
+info := goinsta.NewInfo(url,destination)
 
  _,err:= info.GetImage()
 		if err != nil {
